@@ -1,0 +1,50 @@
+<! HTML DOCTYPE>
+<!-- salvo de url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8 ">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <título>JS Game</title>
+<link rel="stylesheet" href="./JS Game_files/style.css"></head>
+<corpo>
+    <script src="./JS Game_files/app.js" defer=""></script >
+<!-- Código injetado pelo live-server -->
+<roteiro>
+	 <! [CDATA[ <-- Para suporte SVG
+	if ('WebSocket' na janela) {
+		(função () {
+			função refreshCSS() {
+				folhas var  = [].fatia.call(documento.getElementsByTagName("link"));
+				var head = documento.getElementsByTagName("cabeça")[0];
+				para (var i = 0;  Eu < lençóis.comprimento;  ++i) {
+					var elem = folhas[i];
+					var pai = elem.parentElement ||  cabeça;
+					pai.removeChild(elem);
+					var rel = elem.Rel;
+					se (elem.href && tipo de rel != "string" ||  Rel.comprimento == 0 ||  Rel.toLowerCase() == "folha de estilo") {
+						var url = elem.Href.substituir(/(&|\?)_cacheOverride=\d+/, '');
+						Elem.href =  url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (nova Data().  valorDe());
+					}
+					pai.appendChild(elem);
+				}
+			}
+			protocolo var = janela.localização.protocolo === 'http:' ? 'ws://' : 'wss://';
+			Endereço var  = protocolo + janela.localização.host + janela.localização.nome do caminho + '/ws';
+			soquete var  = novo WebSocket(endereço);
+			soquete.onmessage = função (msg) {
+				se (msg.data == 'reload') janela.localização.recarregar();
+				senão se (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Recarga ao vivo habilitada'.);
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', verdadeiro);
+			}
+		})();
+	}
+	mais {
+		console.error('Atualize seu navegador. Este navegador NÃO é suportado WebSocket para Live-Reloading.');
+	}
+	// ]]>
+</roteiro>
+
+</corpo></html>

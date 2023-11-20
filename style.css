@@ -1,17 +1,140 @@
-body {
-    background-color: #000000;
-    color: #F6F6F6;
+* {
+    dimensionamento de caixa: borda-caixa;
+    Margem: 0;
+    preenchimento: 0;
+    cor: branco;
 }
 
-strong {
-    color: #22D4FD;
-}
-h1{
-    font-weight: bold;
+corpo {
+    fundo: linear-gradiente(#1354A5 0%, #041832 33.33%, #041832 66.67%,   #01080E 100  %);
+    Altura: 100VH;
+    Display: Flex;
+    alinhar-itens: centro;
+    justificar-conteúdo: centro;
 }
 
-span{
-    color: #22D4FD;
-    border: 1px solid #22D4FD;
-    padding: 10px;
+
+corpo::antes {
+    imagem de fundo: url("img/código.png");
+    fundo-repetição: não-repetição;
+    posição-fundo: direita;
+    Conteúdo: "";
+    display: bloco;
+    posição: absoluta;
+    largura: 100%;
+    altura: 100%;
+    opacidade: 0.4;
+}
+
+. recipiente {
+    largura: 80%;
+    altura: 80%;
+    Display: Flex;
+    alinhar-itens: centro;
+    justificar-conteúdo: espaço-entre;
+    raio de borda: 24px;
+    borda: 1px sólido #1875E8;
+    caixa-sombra: 4 px 4 px 20 px 0   px rgba (1, 8, 14, 0,15);
+    imagem de fundo: url("img/Ruido.png");
+    tamanho de fundo: 100% 100% ;
+    posição: relativa;
+}
+
+
+. container__conteudo {
+    Display: Flex;
+    alinhar-itens: centro;
+    posição: absoluta;
+    Fundo: 0;
+}
+
+. container__informacoes {
+    Flex: 1;
+    preenchimento: 3rem;
+}
+
+. container__botao {
+    raio de borda: 16px;
+    fundo: #1875E8;
+    preenchimento: 16 px 24px ;
+    largura: 100%;
+    tamanho da fonte: 24px;
+    peso da fonte: 700;
+    fronteira: nenhuma;
+    margem-topo: 2rem;
+}
+
+. container__texto {
+    Margem: 16 px 0   16 px 0;
+}
+
+. container__texto-azul {
+    cor: #1875E8;
+}
+
+.container__input {
+    width: 100%;
+    height: 72px;
+    border-radius: 16px;
+    background-color: #FFF;
+    border: none;
+    color: #1875E8;
+    padding: 2rem;
+    tamanho da fonte: 24px;
+    peso da fonte: 700;
+    fonte-família: 'Inter', sans-serif;
+}
+
+. container__botoes {
+    Display: Flex;
+    Intervalo: 2em;
+}
+
+h1 {
+    fonte-família: 'Chakra Petch', sans-serif;
+    tamanho da fonte: 72px;
+    fundo de preenchimento: 3rem;
+}
+
+p,
+botão {
+    fonte-família: 'Inter', sans-serif;
+}
+
+. texto__paragrafo {
+    tamanho da fonte: 32px;
+    Peso da fonte: 400;
+}
+
+botão:desativado {
+    cor de fundo: cinza;
+}
+
+@media tela e (largura máxima: 1250px) {
+
+    h1 {
+        tamanho da fonte: 50px;
+    }
+
+ . container__botao {
+        tamanho da fonte: 16px;
+    }
+
+
+ . texto__paragrafo {
+        tamanho da fonte: 24px;
+    }
+
+ . container__imagem-pessoa {
+        exibição: nenhuma;
+    }
+
+ . container__conteudo {
+        display: bloco;
+        cargo: herdar;
+    }
+
+ . container__informacoes {
+        preenchimento: 1rem
+    }
 }
